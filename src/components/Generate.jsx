@@ -8,7 +8,10 @@ function Generate({setGallery}) {
   const [saved , setSaved] = useState(false);
 
   const handleGenerate = async () => {
-    
+    if(!prompt.trim()){
+      alert("Please enter a prompt");
+      return;
+    }
   try {
     setLoading(true);
     console.log("promt: "+prompt);
